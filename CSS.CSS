@@ -68,3 +68,15 @@ body{
     letter-spacing: 1.5px;
     color: #8a7ba8;
 }
+
+/* 窄屏：标题跟着屏幕宽度缩，否则会顶出右边 */
+@media (max-width: 620px){
+    .site-title{
+        font-size: clamp(16px, 5vw, 22px);
+        letter-spacing: 0.5px;
+    }
+    .site-sub{
+        font-size: 14px;
+        letter-spacing: 1px;
+    }
+}
