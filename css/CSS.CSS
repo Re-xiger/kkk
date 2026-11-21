@@ -32,7 +32,6 @@ body{
     font-size: 16px;
     text-decoration: none;
 
-
     --g1: #c6e4ff;
     --g2: #e1d5f5;
     background-image: linear-gradient(120deg, var(--g1), var(--g2), var(--g1));
@@ -52,13 +51,12 @@ body{
     box-shadow: 0 8px 20px rgba(0, 0, 0, .12);
 }
 
-
-.menu-item:nth-child(1){ --g1: #ffd6e6; --g2: #ffeaf3; }  /* 小说 · 玫瑰 */
-.menu-item:nth-child(2){ --g1: #d5e4ff; --g2: #edf4ff; }  /* 音乐 · 蓝 */
-.menu-item:nth-child(3){ --g1: #e3d6ff; --g2: #f4ecff; }  /* 动漫 · 紫 */
-.menu-item:nth-child(4){ --g1: #ffe3c0; --g2: #fff4e4; }  /* 语句 · 杏 */
-.menu-item:nth-child(5){ --g1: #c9efdc; --g2: #e9fcf2; }  /* 数字 · 薄荷 */
-.menu-item:nth-child(6){ --g1: #cdeaf5; --g2: #e7f8fd; }  /* 网址 · 青 */
+.menu-item:nth-child(1){ --g1: #ffd6e6; --g2: #ffeaf3; }
+.menu-item:nth-child(2){ --g1: #d5e4ff; --g2: #edf4ff; }
+.menu-item:nth-child(3){ --g1: #e3d6ff; --g2: #f4ecff; }
+.menu-item:nth-child(4){ --g1: #ffe3c0; --g2: #fff4e4; }
+.menu-item:nth-child(5){ --g1: #c9efdc; --g2: #e9fcf2; }
+.menu-item:nth-child(6){ --g1: #cdeaf5; --g2: #e7f8fd; }
 .text-1{
     margin-top: 24px;
     margin-bottom: 24px;
@@ -71,7 +69,6 @@ body{
     font-size: 24px;
     font-weight: 500;
     letter-spacing: 1px;
-
 
     background: linear-gradient(90deg, #5b3a8e, #ad1457);
     -webkit-background-clip: text;
@@ -86,8 +83,6 @@ body{
     color: #8a7ba8;
 }
 
-
-/* ===== 内页公共：顶部返回条 ===== */
 .topbar{
     display: flex;
     align-items: center;
@@ -108,7 +103,6 @@ body{
     letter-spacing: 1px;
 }
 
-/* ===== 卡片网格：一行四个，窗口变窄时列数变少 ===== */
 .cards{
     display: grid;
     grid-template-columns: repeat(4, minmax(0, 1fr));
@@ -149,7 +143,6 @@ body{
     }
 }
 
-/* 窗口窄了，四个并排太挤，改成两个 / 一个 */
 @media (max-width: 780px){
     .cards{
         grid-template-columns: repeat(2, minmax(0, 1fr));

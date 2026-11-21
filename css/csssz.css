@@ -1,15 +1,8 @@
-/* ============================================================
-   数字页专用样式（csssz.css）
-   只给 two/num.html 用，不依赖 CSS.CSS
-   ============================================================ */
-
-/* ---------- 全局 ---------- */
 body{
     margin: 0;
-    background-color: #e1d5f5;      /* 和首页同一个底色 */
+    background-color: #e1d5f5;
 }
 
-/* ---------- 顶部返回条 ---------- */
 .topbar{
     display: flex;
     align-items: center;
@@ -30,7 +23,6 @@ body{
     letter-spacing: 1px;
 }
 
-/* ---------- 页面标题 ---------- */
 .text-1{
     margin-top: 24px;
     margin-bottom: 24px;
@@ -56,7 +48,6 @@ body{
     color: #8a7ba8;
 }
 
-/* ---------- 卡片网格：一行四个，随窗口缩放 ---------- */
 .cards{
     display: grid;
     grid-template-columns: repeat(4, minmax(0, 1fr));
@@ -86,7 +77,6 @@ body{
     color: #7b7089;
 }
 
-/* ---------- 窄屏适配 ---------- */
 @media (max-width: 620px){
     .site-title{
         font-size: clamp(16px, 5vw, 22px);
