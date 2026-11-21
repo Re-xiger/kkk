@@ -48,33 +48,85 @@ body{
     color: #8a7ba8;
 }
 
-.cards{
-    display: grid;
-    grid-template-columns: repeat(4, minmax(0, 1fr));
-    gap: 16px;
-    padding: 0 20px 40px;
+.artists{
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    max-width: 820px;
+    margin: 0 auto;
+    padding: 0 20px 48px;
 }
-.card{
-    padding: 18px 16px;
+.artist{
     border-radius: 10px;
     background-image: linear-gradient(150deg, #ffffff, #f0f6ff);
     box-shadow: 0 1px 3px rgba(0, 0, 0, .06);
-    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    overflow: hidden;
 }
-.card:hover{
-    transform: translateY(-4px);
-    box-shadow: 0 8px 20px rgba(0, 0, 0, .12);
-}
-.card-title{
-    margin: 0 0 8px;
-    font-size: 16px;
+.artist-head{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 16px 18px;
+    border: 0;
+    background: none;
+    font: inherit;
     color: #2b2437;
+    text-align: left;
+    cursor: pointer;
 }
-.card-desc{
-    margin: 0;
+.artist-head:hover{
+    background-color: rgba(255, 255, 255, .5);
+}
+.artist-name{
+    font-size: 16px;
+    font-weight: 600;
+}
+.artist-count{
+    margin-left: auto;
     font-size: 13px;
-    line-height: 1.6;
-    color: #7b7089;
+    color: #8a7ba8;
+}
+.chev{
+    font-size: 12px;
+    color: #8a7ba8;
+    transition: transform 0.25s ease;
+}
+.artist.open .chev{
+    transform: rotate(180deg);
+}
+
+.artist-body{
+    display: grid;
+    grid-template-rows: 0fr;
+    transition: grid-template-rows 0.28s ease;
+}
+.artist.open .artist-body{
+    grid-template-rows: 1fr;
+}
+.artist-inner{
+    overflow: hidden;
+}
+.song-list{
+    list-style: none;
+    margin: 0;
+    padding: 0 18px 16px;
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 8px;
+}
+.song-list a{
+    display: block;
+    padding: 8px 10px;
+    border-radius: 8px;
+    background-color: #eaf2ff;
+    color: #3f3552;
+    font-size: 14px;
+    text-decoration: none;
+}
+.song-list a:hover{
+    background-color: #dbe8ff;
+    color: #5b3a8e;
 }
 
 @media (max-width: 620px){
@@ -87,13 +139,8 @@ body{
         letter-spacing: 1px;
     }
 }
-@media (max-width: 780px){
-    .cards{
-        grid-template-columns: repeat(2, minmax(0, 1fr));
-    }
-}
-@media (max-width: 440px){
-    .cards{
+@media (max-width: 560px){
+    .song-list{
         grid-template-columns: minmax(0, 1fr);
     }
 }

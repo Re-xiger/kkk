@@ -17,23 +17,111 @@
         <p class="site-sub">thes is true music</p>
     </header>
 
-    <main class="cards">
-        <article class="card">
-            <h2 class="card-title">歌名占位一</h2>
-            <p class="card-desc">写一句听感，或者你单曲循环它的理由。</p>
-        </article>
-        <article class="card">
-            <h2 class="card-title">歌名占位二</h2>
-            <p class="card-desc">前奏一响就安静下来的那首。</p>
-        </article>
-        <article class="card">
-            <h2 class="card-title">歌名占位三</h2>
-            <p class="card-desc">适合深夜写代码的时候放。</p>
-        </article>
-        <article class="card">
-            <h2 class="card-title">歌名占位四</h2>
-            <p class="card-desc">想加更多，复制一整段 article 再改字。</p>
-        </article>
+    <main class="artists">
+        <section class="artist">
+            <button class="artist-head" type="button" aria-expanded="false">
+                <span class="artist-name">薛之谦</span>
+                <span class="artist-count">6 首</span>
+                <span class="chev">▾</span>
+            </button>
+            <div class="artist-body">
+                <div class="artist-inner">
+                    <ul class="song-list">
+                        <li><a href="占位符">演员</a></li>
+                        <li><a href="占位符">丑八怪</a></li>
+                        <li><a href="占位符">绅士</a></li>
+                        <li><a href="占位符">刚刚好</a></li>
+                        <li><a href="占位符">动物世界</a></li>
+                        <li><a href="占位符">天外来物</a></li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <section class="artist">
+            <button class="artist-head" type="button" aria-expanded="false">
+                <span class="artist-name">周杰伦</span>
+                <span class="artist-count">6 首</span>
+                <span class="chev">▾</span>
+            </button>
+            <div class="artist-body">
+                <div class="artist-inner">
+                    <ul class="song-list">
+                        <li><a href="占位符">晴天</a></li>
+                        <li><a href="占位符">稻香</a></li>
+                        <li><a href="占位符">七里香</a></li>
+                        <li><a href="占位符">夜曲</a></li>
+                        <li><a href="占位符">青花瓷</a></li>
+                        <li><a href="占位符">告白气球</a></li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <section class="artist">
+            <button class="artist-head" type="button" aria-expanded="false">
+                <span class="artist-name">林俊杰</span>
+                <span class="artist-count">5 首</span>
+                <span class="chev">▾</span>
+            </button>
+            <div class="artist-body">
+                <div class="artist-inner">
+                    <ul class="song-list">
+                        <li><a href="占位符">江南</a></li>
+                        <li><a href="占位符">她说</a></li>
+                        <li><a href="占位符">曹操</a></li>
+                        <li><a href="占位符">修炼爱情</a></li>
+                        <li><a href="占位符">不为谁而作的歌</a></li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <section class="artist">
+            <button class="artist-head" type="button" aria-expanded="false">
+                <span class="artist-name">陈粒</span>
+                <span class="artist-count">4 首</span>
+                <span class="chev">▾</span>
+            </button>
+            <div class="artist-body">
+                <div class="artist-inner">
+                    <ul class="song-list">
+                        <li><a href="占位符">奇妙能力歌</a></li>
+                        <li><a href="占位符">小半</a></li>
+                        <li><a href="占位符">走马</a></li>
+                        <li><a href="占位符">历历万乡</a></li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <section class="artist">
+            <button class="artist-head" type="button" aria-expanded="false">
+                <span class="artist-name">房东的猫</span>
+                <span class="artist-count">3 首</span>
+                <span class="chev">▾</span>
+            </button>
+            <div class="artist-body">
+                <div class="artist-inner">
+                    <ul class="song-list">
+                        <li><a href="占位符">云烟成雨</a></li>
+                        <li><a href="占位符">秋酿</a></li>
+                        <li><a href="占位符">美好事物</a></li>
+                    </ul>
+                </div>
+            </div>
+        </section>
     </main>
+
+    <script>
+        document.querySelectorAll('.artist-head').forEach(function (head) {
+            head.addEventListener('click', function () {
+                var item = head.parentNode;
+                var open = !item.classList.contains('open');
+                item.classList.toggle('open', open);
+                head.setAttribute('aria-expanded', open ? 'true' : 'false');
+            });
+        });
+    </script>
 </body>
 </html>
