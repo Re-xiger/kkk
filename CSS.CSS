@@ -32,7 +32,7 @@ body{
     font-size: 16px;
     text-decoration: none;
 
-    /* 每张卡片一对渐变色，具体颜色写在下方的 nth-child 里 */
+
     --g1: #c6e4ff;
     --g2: #e1d5f5;
     background-image: linear-gradient(120deg, var(--g1), var(--g2), var(--g1));
@@ -52,7 +52,7 @@ body{
     box-shadow: 0 8px 20px rgba(0, 0, 0, .12);
 }
 
-/* 六张卡片各一种配色，顺序对应 index.html 里的六个链接 */
+
 .menu-item:nth-child(1){ --g1: #ffd6e6; --g2: #ffeaf3; }  /* 小说 · 玫瑰 */
 .menu-item:nth-child(2){ --g1: #d5e4ff; --g2: #edf4ff; }  /* 音乐 · 蓝 */
 .menu-item:nth-child(3){ --g1: #e3d6ff; --g2: #f4ecff; }  /* 动漫 · 紫 */
@@ -86,7 +86,58 @@ body{
     color: #8a7ba8;
 }
 
-/* 窄屏：标题跟着屏幕宽度缩，否则会顶出右边 */
+
+/* ===== 内页公共：顶部返回条 ===== */
+.topbar{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 14px 20px;
+}
+.back-link{
+    color: #5b3a8e;
+    font-size: 14px;
+    text-decoration: none;
+}
+.back-link:hover{
+    text-decoration: underline;
+}
+.page-tag{
+    color: #8a7ba8;
+    font-size: 13px;
+    letter-spacing: 1px;
+}
+
+/* ===== 卡片网格：一行四个，窗口变窄时列数变少 ===== */
+.cards{
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 16px;
+    padding: 0 20px 40px;
+}
+.card{
+    padding: 18px 16px;
+    border-radius: 10px;
+    background-image: linear-gradient(150deg, #ffffff, #f3edff);
+    box-shadow: 0 1px 3px rgba(0, 0, 0, .06);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+.card:hover{
+    transform: translateY(-4px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, .12);
+}
+.card-title{
+    margin: 0 0 8px;
+    font-size: 16px;
+    color: #2b2437;
+}
+.card-desc{
+    margin: 0;
+    font-size: 13px;
+    line-height: 1.6;
+    color: #7b7089;
+}
+
 @media (max-width: 620px){
     .site-title{
         font-size: clamp(16px, 5vw, 22px);
@@ -95,5 +146,17 @@ body{
     .site-sub{
         font-size: 14px;
         letter-spacing: 1px;
+    }
+}
+
+/* 窗口窄了，四个并排太挤，改成两个 / 一个 */
+@media (max-width: 780px){
+    .cards{
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+}
+@media (max-width: 440px){
+    .cards{
+        grid-template-columns: minmax(0, 1fr);
     }
 }
