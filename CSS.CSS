@@ -27,21 +27,38 @@ body{
     display: block;
     padding: 16px;
     border-radius: 8px;
-    background-color: #c6e4ff;
 
     color: #222;
     font-size: 16px;
     text-decoration: none;
 
-    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    /* 每张卡片一对渐变色，具体颜色写在下方的 nth-child 里 */
+    --g1: #c6e4ff;
+    --g2: #e1d5f5;
+    background-image: linear-gradient(120deg, var(--g1), var(--g2), var(--g1));
+    background-size: 200% 100%;
+    background-position: 0% 0%;
+
+    transition: background-position 0.55s ease,
+                transform 0.2s ease,
+                box-shadow 0.2s ease;
 
     box-shadow: 0 1px 3px rgba(0, 0, 0, .06);
 
 }
 .menu-item:hover{
+    background-position: 100% 0%;
     transform: translateY(-4px);
     box-shadow: 0 8px 20px rgba(0, 0, 0, .12);
 }
+
+/* 六张卡片各一种配色，顺序对应 index.html 里的六个链接 */
+.menu-item:nth-child(1){ --g1: #ffd6e6; --g2: #ffeaf3; }  /* 小说 · 玫瑰 */
+.menu-item:nth-child(2){ --g1: #d5e4ff; --g2: #edf4ff; }  /* 音乐 · 蓝 */
+.menu-item:nth-child(3){ --g1: #e3d6ff; --g2: #f4ecff; }  /* 动漫 · 紫 */
+.menu-item:nth-child(4){ --g1: #ffe3c0; --g2: #fff4e4; }  /* 语句 · 杏 */
+.menu-item:nth-child(5){ --g1: #c9efdc; --g2: #e9fcf2; }  /* 数字 · 薄荷 */
+.menu-item:nth-child(6){ --g1: #cdeaf5; --g2: #e7f8fd; }  /* 网址 · 青 */
 .text-1{
     margin-top: 24px;
     margin-bottom: 24px;
