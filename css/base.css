@@ -1,6 +1,21 @@
+:root{
+    --font-title: Georgia, "Times New Roman", "Songti SC", "SimSun", serif;
+    --font-kai: "STKaiti", "Kaiti SC", "KaiTi", "楷体", "BiauKai", "AR PL UKai CN", "Noto Serif CJK SC", serif;
+    --font-body: -apple-system, BlinkMacSystemFont, "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "Helvetica Neue", Arial, sans-serif;
+}
+
+html{
+    -webkit-text-size-adjust: 100%;
+        -ms-text-size-adjust: 100%;
+            text-size-adjust: 100%;
+}
+
 body{
     margin: 0;
     background-color: #e1d5f5;
+    font-family: var(--font-body);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
 }
 
 .topbar{
@@ -30,22 +45,32 @@ body{
 }
 .site-title{
     margin: 0;
-    font-family: Georgia, 'Times New Roman', serif;
+    font-family: var(--font-title);
     font-size: 24px;
     font-weight: 500;
     letter-spacing: 2px;
 
-    background: linear-gradient(90deg, #5b3a8e, #ad1457);
+    color: #5b3a8e;
+    background-image: linear-gradient(90deg, #5b3a8e, #ad1457);
     -webkit-background-clip: text;
             background-clip: text;
-    color: transparent;
+    -webkit-text-fill-color: transparent;
+    text-rendering: optimizeLegibility;
 }
 .site-sub{
     margin: 8px 0 0;
-    font-family: "STKaiti", "KaiTi", "楷体", serif;
+    font-family: var(--font-kai);
     font-size: 16px;
     letter-spacing: 1.5px;
     color: #8a7ba8;
+}
+
+@supports not ((-webkit-background-clip: text) or (background-clip: text)){
+    .site-title{
+        background-image: none;
+        color: #5b3a8e;
+        -webkit-text-fill-color: currentColor;
+    }
 }
 
 .cards{
