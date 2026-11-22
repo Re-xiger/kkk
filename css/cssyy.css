@@ -1,52 +1,4 @@
-body{
-    margin: 0;
-    background-color: #e1d5f5;
-}
-
-.topbar{
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 14px 20px;
-}
-.back-link{
-    color: #5b3a8e;
-    font-size: 14px;
-    text-decoration: none;
-}
-.back-link:hover{
-    text-decoration: underline;
-}
-.page-tag{
-    color: #8a7ba8;
-    font-size: 13px;
-    letter-spacing: 1px;
-}
-
-.text-1{
-    margin-top: 24px;
-    margin-bottom: 24px;
-    text-align: center;
-}
-.site-title{
-    margin: 0;
-    font-family: Georgia, 'Times New Roman', serif;
-    font-size: 24px;
-    font-weight: 500;
-    letter-spacing: 2px;
-
-    background: linear-gradient(90deg, #5b3a8e, #ad1457);
-    -webkit-background-clip: text;
-            background-clip: text;
-    color: transparent;
-}
-.site-sub{
-    margin: 8px 0 0;
-    font-family: "STKaiti", "KaiTi", "楷体", serif;
-    font-size: 16px;
-    letter-spacing: 1.5px;
-    color: #8a7ba8;
-}
+/* 音乐页专用：按歌手折叠。公共样式在 base.css 里。 */
 
 .artists{
     display: flex;
@@ -58,7 +10,7 @@ body{
 }
 .artist{
     border-radius: 10px;
-    background-image: linear-gradient(150deg, #ffffff, #f0f6ff);
+    background-image: linear-gradient(150deg, #ffffff, var(--tint, #f0f6ff));
     box-shadow: 0 1px 3px rgba(0, 0, 0, .06);
     overflow: hidden;
 }
@@ -129,16 +81,6 @@ body{
     color: #5b3a8e;
 }
 
-@media (max-width: 620px){
-    .site-title{
-        font-size: clamp(16px, 5vw, 22px);
-        letter-spacing: 1px;
-    }
-    .site-sub{
-        font-size: 14px;
-        letter-spacing: 1px;
-    }
-}
 @media (max-width: 560px){
     .song-list{
         grid-template-columns: minmax(0, 1fr);

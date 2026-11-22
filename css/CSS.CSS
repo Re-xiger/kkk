@@ -1,6 +1,5 @@
-body{
-    background-color: #e1d5f5;
-}
+/* 首页专用：大图 + 目录菜单。公共样式在 base.css 里。 */
+
 .bigtu{
     display: flex;
     justify-content: center;
@@ -16,6 +15,7 @@ body{
     border-radius: 12px;
     box-shadow: 0 6px 18px rgba(0, 0, 0, .12);
 }
+
 .menu1{
     display: flex;
     flex-direction: column;
@@ -24,7 +24,9 @@ body{
     padding: 0 20px;
 }
 .menu-item{
-    display: block;
+    display: flex;
+    align-items: baseline;
+    gap: 18px;
     padding: 16px;
     border-radius: 8px;
 
@@ -43,12 +45,24 @@ body{
                 box-shadow 0.2s ease;
 
     box-shadow: 0 1px 3px rgba(0, 0, 0, .06);
-
 }
 .menu-item:hover{
     background-position: 100% 0%;
     transform: translateY(-4px);
     box-shadow: 0 8px 20px rgba(0, 0, 0, .12);
+}
+
+.m-title{
+    flex: 0 0 auto;
+    min-width: 104px;
+    font-weight: 600;
+}
+.m-desc{
+    flex: 1 1 auto;
+    min-width: 0;
+    font-size: 15px;
+    line-height: 1.5;
+    color: #3f3552;
 }
 
 .menu-item:nth-child(1){ --g1: #ffd6e6; --g2: #ffeaf3; }
@@ -60,99 +74,14 @@ body{
 .menu-item:nth-child(7){ --g1: #ffd8d0; --g2: #fff0ec; }
 .menu-item:nth-child(8){ --g1: #fdf0c4; --g2: #fffae8; }
 .menu-item:nth-child(9){ --g1: #dcefc8; --g2: #f2fae8; }
-.text-1{
-    margin-top: 24px;
-    margin-bottom: 24px;
-    text-align: center;
 
-}
-.site-title{
-    margin: 0;
-    font-family: Georgia, 'Times New Roman', serif;
-    font-size: 24px;
-    font-weight: 500;
-    letter-spacing: 1px;
-
-    background: linear-gradient(90deg, #5b3a8e, #ad1457);
-    -webkit-background-clip: text;
-            background-clip: text;
-    color: transparent;
-}
-.site-sub{
-    margin: 8px 0 0;
-    font-family: "STKaiti","KaiTi","楷体",serif;
-    font-size: 16px;
-    letter-spacing: 1.5px;
-    color: #8a7ba8;
-}
-
-.topbar{
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 14px 20px;
-}
-.back-link{
-    color: #5b3a8e;
-    font-size: 14px;
-    text-decoration: none;
-}
-.back-link:hover{
-    text-decoration: underline;
-}
-.page-tag{
-    color: #8a7ba8;
-    font-size: 13px;
-    letter-spacing: 1px;
-}
-
-.cards{
-    display: grid;
-    grid-template-columns: repeat(4, minmax(0, 1fr));
-    gap: 16px;
-    padding: 0 20px 40px;
-}
-.card{
-    padding: 18px 16px;
-    border-radius: 10px;
-    background-image: linear-gradient(150deg, #ffffff, #f3edff);
-    box-shadow: 0 1px 3px rgba(0, 0, 0, .06);
-    transition: transform 0.2s ease, box-shadow 0.2s ease;
-}
-.card:hover{
-    transform: translateY(-4px);
-    box-shadow: 0 8px 20px rgba(0, 0, 0, .12);
-}
-.card-title{
-    margin: 0 0 8px;
-    font-size: 16px;
-    color: #2b2437;
-}
-.card-desc{
-    margin: 0;
-    font-size: 13px;
-    line-height: 1.6;
-    color: #7b7089;
-}
-
-@media (max-width: 620px){
-    .site-title{
-        font-size: clamp(16px, 5vw, 22px);
-        letter-spacing: 0.5px;
+@media (max-width: 600px){
+    .menu-item{
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 6px;
     }
-    .site-sub{
-        font-size: 14px;
-        letter-spacing: 1px;
-    }
-}
-
-@media (max-width: 780px){
-    .cards{
-        grid-template-columns: repeat(2, minmax(0, 1fr));
-    }
-}
-@media (max-width: 440px){
-    .cards{
-        grid-template-columns: minmax(0, 1fr);
+    .m-title{
+        min-width: 0;
     }
 }
