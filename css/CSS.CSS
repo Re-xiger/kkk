@@ -57,6 +57,9 @@ body{
 .menu-item:nth-child(4){ --g1: #ffe3c0; --g2: #fff4e4; }
 .menu-item:nth-child(5){ --g1: #c9efdc; --g2: #e9fcf2; }
 .menu-item:nth-child(6){ --g1: #cdeaf5; --g2: #e7f8fd; }
+.menu-item:nth-child(7){ --g1: #ffd8d0; --g2: #fff0ec; }
+.menu-item:nth-child(8){ --g1: #fdf0c4; --g2: #fffae8; }
+.menu-item:nth-child(9){ --g1: #dcefc8; --g2: #f2fae8; }
 .text-1{
     margin-top: 24px;
     margin-bottom: 24px;
