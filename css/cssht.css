@@ -1,0 +1,92 @@
+/* 好图页专用：图片卡片 + 点击放大。公共样式在 base.css 里。 */
+
+.pic{
+    padding: 0;
+    overflow: hidden;
+    border: 0;
+    background-image: none;
+    background-color: #ffffff;
+    cursor: zoom-in;
+    aspect-ratio: 1 / 1;
+}
+.pic img{
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.lightbox{
+    position: fixed;
+    inset: 0;
+    z-index: 50;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 16px;
+    padding: 24px;
+    background-color: rgba(22, 16, 30, .88);
+}
+.lightbox[hidden]{
+    display: none;
+}
+.lightbox:focus{
+    outline: none;
+}
+.lb-img{
+    max-width: 92vw;
+    max-height: 74vh;
+    border-radius: 8px;
+    box-shadow: 0 18px 48px rgba(0, 0, 0, .55);
+}
+.lb-bar{
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+.lb-download{
+    padding: 10px 22px;
+    border-radius: 999px;
+    background-image: linear-gradient(120deg, #7b56b8, #ad1457);
+    color: #ffffff;
+    font-size: 14px;
+    letter-spacing: 1px;
+    text-decoration: none;
+    box-shadow: 0 6px 18px rgba(0, 0, 0, .3);
+}
+.lb-download:hover{
+    filter: brightness(1.08);
+}
+.lb-close{
+    position: absolute;
+    top: 18px;
+    right: 20px;
+    width: 42px;
+    height: 42px;
+    padding: 0;
+    border: 0;
+    border-radius: 50%;
+    background-color: rgba(255, 255, 255, .16);
+    color: #ffffff;
+    font-size: 26px;
+    line-height: 1;
+    cursor: pointer;
+}
+.lb-close:hover{
+    background-color: rgba(255, 255, 255, .3);
+}
+
+body.lb-open{
+    overflow: hidden;
+}
+
+@media (max-width: 560px){
+    .lb-img{
+        max-height: 68vh;
+    }
+    .lb-close{
+        top: 12px;
+        right: 12px;
+    }
+}

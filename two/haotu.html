@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>好图 - xiger</title>
     <link rel="stylesheet" href="../css/base.css">
+    <link rel="stylesheet" href="../css/cssht.css">
 </head>
 <body style="--tint: #fffbe8">
     <div class="topbar">
@@ -18,22 +19,102 @@
     </header>
 
     <main class="cards">
-        <article class="card">
-            <h2 class="card-title">图一占位</h2>
-            <p class="card-desc">把图片放进 tu 文件夹，再用 img 引进来。</p>
-        </article>
-        <article class="card">
-            <h2 class="card-title">图二占位</h2>
-            <p class="card-desc">一句话写这图哪来的，或者哪好看了。</p>
-        </article>
-        <article class="card">
-            <h2 class="card-title">图三占位</h2>
-            <p class="card-desc">竖图横图都行，卡片会撑开。</p>
-        </article>
-        <article class="card">
-            <h2 class="card-title">图四占位</h2>
-            <p class="card-desc">想加更多，复制一整段 article 再改字。</p>
-        </article>
+        <button class="card pic" type="button" data-full="../tu/tu1.jpg" data-name="tu1.jpg">
+            <img src="../tu/thumbs/tu1.jpg" alt="好图 1" loading="lazy">
+        </button>
+        <button class="card pic" type="button" data-full="../tu/tu2.jpg" data-name="tu2.jpg">
+            <img src="../tu/thumbs/tu2.jpg" alt="好图 2" loading="lazy">
+        </button>
+        <button class="card pic" type="button" data-full="../tu/tu3.jpg" data-name="tu3.jpg">
+            <img src="../tu/thumbs/tu3.jpg" alt="好图 3" loading="lazy">
+        </button>
+        <button class="card pic" type="button" data-full="../tu/tu4.jpg" data-name="tu4.jpg">
+            <img src="../tu/thumbs/tu4.jpg" alt="好图 4" loading="lazy">
+        </button>
+        <button class="card pic" type="button" data-full="../tu/tu5.jpg" data-name="tu5.jpg">
+            <img src="../tu/thumbs/tu5.jpg" alt="好图 5" loading="lazy">
+        </button>
+        <button class="card pic" type="button" data-full="../tu/tu6.jpg" data-name="tu6.jpg">
+            <img src="../tu/thumbs/tu6.jpg" alt="好图 6" loading="lazy">
+        </button>
+        <button class="card pic" type="button" data-full="../tu/tu7.jpg" data-name="tu7.jpg">
+            <img src="../tu/thumbs/tu7.jpg" alt="好图 7" loading="lazy">
+        </button>
+        <button class="card pic" type="button" data-full="../tu/tu8.jpg" data-name="tu8.jpg">
+            <img src="../tu/thumbs/tu8.jpg" alt="好图 8" loading="lazy">
+        </button>
+        <button class="card pic" type="button" data-full="../tu/tu9.jpg" data-name="tu9.jpg">
+            <img src="../tu/thumbs/tu9.jpg" alt="好图 9" loading="lazy">
+        </button>
+        <button class="card pic" type="button" data-full="../tu/tu10.jpg" data-name="tu10.jpg">
+            <img src="../tu/thumbs/tu10.jpg" alt="好图 10" loading="lazy">
+        </button>
+        <button class="card pic" type="button" data-full="../tu/tu11.jpg" data-name="tu11.jpg">
+            <img src="../tu/thumbs/tu11.jpg" alt="好图 11" loading="lazy">
+        </button>
+        <button class="card pic" type="button" data-full="../tu/tu12.jpg" data-name="tu12.jpg">
+            <img src="../tu/thumbs/tu12.jpg" alt="好图 12" loading="lazy">
+        </button>
+        <button class="card pic" type="button" data-full="../tu/tu13.jpg" data-name="tu13.jpg">
+            <img src="../tu/thumbs/tu13.jpg" alt="好图 13" loading="lazy">
+        </button>
+        <button class="card pic" type="button" data-full="../tu/tu14.jpg" data-name="tu14.jpg">
+            <img src="../tu/thumbs/tu14.jpg" alt="好图 14" loading="lazy">
+        </button>
     </main>
+
+    <div class="lightbox" id="lightbox" tabindex="-1" hidden>
+        <button class="lb-close" type="button" aria-label="关闭">×</button>
+        <img class="lb-img" alt="">
+        <div class="lb-bar">
+            <a class="lb-download" href="#" download>下载原图</a>
+        </div>
+    </div>
+
+    <script>
+    (function () {
+        var box = document.getElementById('lightbox');
+        var big = box.querySelector('.lb-img');
+        var link = box.querySelector('.lb-download');
+        var closeBtn = box.querySelector('.lb-close');
+        var lastFocus = null;
+
+        function open(btn) {
+            var full = btn.getAttribute('data-full');
+            big.src = full;
+            link.href = full;
+            link.setAttribute('download', btn.getAttribute('data-name'));
+            box.hidden = false;
+            document.body.classList.add('lb-open');
+            lastFocus = btn;
+            box.focus();
+        }
+
+        function close() {
+            box.hidden = true;
+            document.body.classList.remove('lb-open');
+            big.removeAttribute('src');
+            if (lastFocus) {
+                lastFocus.focus();
+            }
+        }
+
+        Array.prototype.forEach.call(document.querySelectorAll('.pic'), function (btn) {
+            btn.addEventListener('click', function () { open(btn); });
+        });
+
+        closeBtn.addEventListener('click', close);
+        box.addEventListener('click', function (e) {
+            if (e.target === box) {
+                close();
+            }
+        });
+        document.addEventListener('keydown', function (e) {
+            if (e.key === 'Escape' && !box.hidden) {
+                close();
+            }
+        });
+    }());
+    </script>
 </body>
 </html>
