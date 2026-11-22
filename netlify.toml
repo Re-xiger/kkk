@@ -1,0 +1,20 @@
+[build]
+  publish = "."
+  command = ""
+
+# 图片等静态资源走长缓存
+[[headers]]
+  for = "/tu/*"
+  [headers.values]
+    Cache-Control = "public, max-age=604800"
+
+# 样式改得勤，让浏览器 10 分钟后必须回源确认一次，避免手机一直用旧 CSS
+[[headers]]
+  for = "/css/*"
+  [headers.values]
+    Cache-Control = "public, max-age=600, must-revalidate"
+
+[[headers]]
+  for = "/*.html"
+  [headers.values]
+    Cache-Control = "public, max-age=0, must-revalidate"
