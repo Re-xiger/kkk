@@ -23,21 +23,51 @@
             <p class="card-desc">作者：刘慈欣</p>
             <p class="site-sub">毋庸置疑</p>
         </a>
-        <a class="card" href="https://search.douban.com/book/subject_search?search_text=%E6%81%B6%E6%84%8F%20%E4%B8%9C%E9%87%8E%E5%9C%AD%E5%90%BE" target="_blank" rel="noopener">
+        <article class="card no-link" role="button" tabindex="0">
             <h2 class="card-title">《恶意》</h2>
             <p class="card-desc">作者：东野圭吾</p>
             <p class="site-sub">我的悬疑小说入坑作，也是我对日本作家的第一印象，谢谢你东野圭吾先生。</p>
-        </a>
-        <a class="card" href="https://weread.qq.com/web/reader/05e329405e3dd605ee04cec" target="_blank" rel="noopener">
+        </article>
+        <article class="card no-link" role="button" tabindex="0">
             <h2 class="card-title">《龙族》</h2>
             <p class="card-desc">作者：江南（杨治）</p>
             <p class="site-sub">老贼速更！奇幻，青春文学，催更了一整个青春的神作，一个衰小孩的爽文罢了。</p>
-        </a>
+        </article>
         <a class="card" href="https://fanqienovel.com/page/6569997839437401101?enter_from=search" target="_blank" rel="noopener">
             <h2 class="card-title">《我的26岁女房客》</h2>
             <p class="card-desc">作者：超级大坦克科比（王金星）</p>
             <p class="site-sub">这是唯一一部让我难以言表的书，后来啊我去了江苏，那里没有天空之城，都是骗人的。</p>
         </a>
     </main>
+
+    <div class="tip" id="tip" role="status" aria-live="polite"></div>
+
+    <script>
+        (function () {
+            var tip = document.getElementById('tip');
+            var timer = null;
+
+            function show(text) {
+                tip.textContent = text;
+                tip.classList.add('show');
+                clearTimeout(timer);
+                timer = setTimeout(function () {
+                    tip.classList.remove('show');
+                }, 2000);
+            }
+
+            Array.prototype.forEach.call(document.querySelectorAll('.no-link'), function (card) {
+                card.addEventListener('click', function () {
+                    show('暂无链接，去其他渠道看看吧');
+                });
+                card.addEventListener('keydown', function (e) {
+                    if (e.key === 'Enter' || e.key === ' ') {
+                        e.preventDefault();
+                        show('暂无链接，去其他渠道看看吧');
+                    }
+                });
+            });
+        })();
+    </script>
 </body>
 </html>
