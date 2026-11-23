@@ -8,11 +8,11 @@
   [headers.values]
     Cache-Control = "public, max-age=604800"
 
-# 样式改得勤，让浏览器 10 分钟后必须回源确认一次，避免手机一直用旧 CSS
+# 样式改得勤：不回长缓存，每次都用最新的，避免改完看不到
 [[headers]]
   for = "/css/*"
   [headers.values]
-    Cache-Control = "public, max-age=600, must-revalidate"
+    Cache-Control = "public, max-age=0, must-revalidate"
 
 [[headers]]
   for = "/*.html"
