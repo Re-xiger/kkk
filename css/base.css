@@ -161,6 +161,33 @@ button:focus-visible{
     border-radius: 6px;
 }
 
+.site-footer{
+    margin: 8px 20px 30px;
+    padding-top: 18px;
+    border-top: 1px solid rgba(91, 58, 142, .15);
+    text-align: center;
+    font-size: 12px;
+    line-height: 1.9;
+    letter-spacing: 0.5px;
+    color: #8a7ba8;
+}
+.site-footer p{
+    margin: 0;
+}
+
+.about-text{
+    max-width: 720px;
+    margin: 0 auto 18px;
+    padding: 0 20px;
+    font-size: 15px;
+    line-height: 2;
+    color: #4a3f5c;
+    text-align: justify;
+}
+.about-text:last-of-type{
+    margin-bottom: 30px;
+}
+
 @media (max-width: 620px){
     .site-title{
         font-size: clamp(16px, 5vw, 22px);

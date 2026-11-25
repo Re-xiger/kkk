@@ -74,6 +74,7 @@
 .menu-item:nth-child(7){ --g1: #ffd8d0; --g2: #fff0ec; }
 .menu-item:nth-child(8){ --g1: #fdf0c4; --g2: #fffae8; }
 .menu-item:nth-child(9){ --g1: #dcefc8; --g2: #f2fae8; }
+.menu-item:nth-child(10){ --g1: #e8dcf6; --g2: #f7f2fd; }
 
 @media (max-width: 600px){
     .menu-item{
